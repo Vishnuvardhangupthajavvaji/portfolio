@@ -36,24 +36,15 @@ const EMAIL = 'vishnujavvaji19@gmail.com'
 const PHONE = '+91 9505358105'
 
 const projects = [
+  
   {
     number: '01',
-    name: 'Split Even',
-    category: 'Full-stack · Fintech utility',
-    description:
-      'A group expense platform that calculates balances and simplifies debts into fewer settlement transfers, with support for multiple split methods and currencies.',
-    stack: ['Django', 'DRF', 'React', 'SQLite'],
-    repo: `${GITHUB}/Split-Even`,
-    demo: '',
-    visual: 'split',
-    featured: true,
-    detail:
-      'Equal, exact, percentage and shares-based splits; penny-accurate remainder distribution; balance recomputation; CSV ledger export.'
-  },
-  {
-    number: '02',
     name: 'E-Commerce Platform',
     category: 'Full-stack · E-Commerce',
+    cover_img:{
+      src: '/assets/E-Commerce-Platform.png',
+      alt: 'E-Commerce Platform project screenshot'
+    },
     description:
       'A shopping platform with authentication, product management, cart and order workflows, built with a separated React frontend and Django API.',
     stack: ['Python', 'Django REST', 'React', 'PostgreSQL'],
@@ -65,9 +56,31 @@ const projects = [
       'Backend is organized into focused apps for users, products, cart, orders, wishlist and comments.'
   },
   {
+    number: '02',
+    name: 'Automated Resume Analysis & Skill Matching',
+    category: 'Full-stack · Recruitment',
+    cover_img:{
+      src: '/assets/Automated-Resume-Analysis.png',
+      alt: 'Automated Resume Analysis project screenshot'
+    },
+    description:
+      'A recruitment platform that extracts skills from uploaded resumes, calculates candidate-job compatibility scores, and streamlines hiring through recruiter approval, job posting and application management.',
+    stack: ['Python', 'Django', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
+    repo: `${GITHUB}/Automated-Resume-Analysis`,
+    demo: '',
+    visual: 'resume',
+    featured: true,
+    detail:
+      'Includes resume parsing and skill matching, role-based authentication, admin-controlled recruiter approval, job posting, candidate applications and recruiter-specific applicant access.'
+  },
+  {
     number: '03',
     name: 'InstaShare',
     category: 'Frontend · Social application',
+    cover_img:{
+      src: '/assets/InstaShare.png',
+      alt: 'InstaShare project screenshot'
+    },
     description:
       'A responsive social sharing app with protected routes, login, feed, stories, profile pages, user details and search.',
     stack: ['React 19', 'React Router', 'JavaScript', 'CSS'],
@@ -80,8 +93,48 @@ const projects = [
   },
   {
     number: '04',
+    name: 'Split Even',
+    category: 'Full-stack · Fintech utility',
+    cover_img: {
+      src: '/assets/Split-Even.png',
+      alt: 'Split Even project screenshot'
+    },
+    description:
+      'A group expense platform that calculates balances and simplifies debts into fewer settlement transfers, with support for multiple split methods and currencies.',
+    stack: ['Django', 'DRF', 'React', 'SQLite'],
+    repo: `${GITHUB}/Split-Even`,
+    demo: '',
+    visual: 'split',
+    featured: true,
+    detail:
+      'Equal, exact, percentage and shares-based splits; penny-accurate remainder distribution; balance recomputation; CSV ledger export.'
+  },
+  {
+    number: '05',
+    name: 'Job Tracker',
+    category: 'Browser extension · Automation',
+    cover_img:{
+      src: '/assets/Job-Tracker.png',
+      alt: 'Job Tracker project screenshot'
+    },
+    description:
+      'A job-application tracker combining a Flask API with a Chrome extension workflow for saving and managing application records.',
+    stack: ['Python', 'Flask', 'SQLite', 'Plasmo', 'React'],
+    repo: `${GITHUB}/Job-Tracker`,
+    demo: '',
+    visual: 'jobs',
+    featured: false,
+    detail:
+      'The API supports creating, listing, updating status and deleting tracked job records.'
+  },
+  {
+    number: '06',
     name: 'Fashion Finds',
     category: 'Backend · E-commerce',
+    cover_img:{
+      src: '/assets/Fashion-Finds.png',
+      alt: 'Fashion Finds project screenshot'
+    },
     description:
       'A Flask-powered fashion store with customer shopping flows and an admin experience for products, inventory and order operations.',
     stack: ['Python', 'Flask', 'SQLite', 'SQLAlchemy'],
@@ -92,20 +145,7 @@ const projects = [
     detail:
       'Repository includes tests covering routes, cart, wishlist, checkout, orders, product search and delivery dashboard.'
   },
-  {
-    number: '05',
-    name: 'Job Tracker',
-    category: 'Browser extension · Automation',
-    description:
-      'A job-application tracker combining a Flask API with a Chrome extension workflow for saving and managing application records.',
-    stack: ['Python', 'Flask', 'SQLite', 'Plasmo', 'React'],
-    repo: `${GITHUB}/Job-Tracker`,
-    demo: '',
-    visual: 'jobs',
-    featured: false,
-    detail:
-      'The API supports creating, listing, updating status and deleting tracked job records.'
-  }
+  
 ]
 
 const skillGroups = [
@@ -152,7 +192,7 @@ const education = [
     date: '2022 — 2026',
     title: 'B.Tech · Computer Science & Engineering',
     place: 'Malla Reddy Engineering College (Autonomous), Hyderabad',
-    note: 'CGPA · 8.76'
+    note: 'CGPA · 8.78'
   },
   {
     date: '2020 — 2022',
@@ -167,41 +207,6 @@ const education = [
     note: 'GPA · 10.0'
   }
 ]
-
-function ProjectVisual({ type }) {
-  const projectImages = {
-    split: {
-      src: '/assets/Split-Even.png',
-      alt: 'Split Even project screenshot'
-    },
-    shop: {
-      src: '/assets/E-Commerce%20Platform.png',
-      alt: 'E-Commerce Platform project screenshot'
-    },
-    social: {
-      src: '/assets/InstaShare.png',
-      alt: 'InstaShare project screenshot'
-    },
-    fashion: {
-      src: '/assets/Fashion-Finds.png',
-      alt: 'Fashion Finds project screenshot'
-    },
-    jobs: {
-      src: '/assets/Job-Tracker.png',
-      alt: 'Job Tracker project screenshot'
-    }
-  }
-
-  const image = projectImages[type]
-
-  if (!image) return null
-
-  return (
-    <div className={`project-visual visual-${type}`}>
-      <img src={image.src} alt={image.alt} loading="lazy" />
-    </div>
-  )
-}
 
 function BrandIcon({ name }) {
   const icons = {
@@ -470,7 +475,7 @@ function App() {
 
             <article className="stat-card panel">
               <span className="panel-label">EDUCATION</span>
-              <b>8.76</b>
+              <b>8.78</b>
               <span> B.Tech CGPA</span>
               <small>Computer Science & Engineering · 2026</small>
             </article>
@@ -566,7 +571,10 @@ function App() {
             {visibleProjects.map((project) => (
               <article className="project-card panel" key={project.name}>
                 <div className="project-art">
-                  <ProjectVisual type={project.visual} />
+                  {/* <ProjectVisual type={project.visual} /> */}
+                  <div className={`project-visual `}>
+                    <img src={project.cover_img.src} alt={project.cover_img.alt} loading="lazy" />
+                  </div>
                   <span className="project-number">{project.number}</span>
                 </div>
                 <div className="project-content">
@@ -583,18 +591,13 @@ function App() {
                     <a className="project-link" href={project.repo} target="_blank" rel="noreferrer">
                       <Github size={15} /> GitHub <ArrowUpRight size={13} />
                     </a>
-                    {project.demo ? (
+                    
+                    {project.demo && (
                       <a className="project-link project-live" href={project.demo} target="_blank" rel="noreferrer">
                         <Globe size={15} /> Live Demo <ArrowUpRight size={13} />
                       </a>
-                    ) : (
-                      <span
-                        className="project-link project-pending"
-                        title="A public demo or recorded walkthrough has not been supplied yet"
-                      >
-                        <Play size={14} /> Demo link needed
-                      </span>
                     )}
+                    
                   </div>
                 </div>
               </article>
