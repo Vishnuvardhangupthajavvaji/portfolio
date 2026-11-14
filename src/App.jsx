@@ -571,7 +571,6 @@ function App() {
             {visibleProjects.map((project) => (
               <article className="project-card panel" key={project.name}>
                 <div className="project-art">
-                  {/* <ProjectVisual type={project.visual} /> */}
                   <div className={`project-visual `}>
                     <img src={project.cover_img.src} alt={project.cover_img.alt} loading="lazy" />
                   </div>
