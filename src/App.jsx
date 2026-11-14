@@ -67,7 +67,7 @@ const projects = [
       'A recruitment platform that extracts skills from uploaded resumes, calculates candidate-job compatibility scores, and streamlines hiring through recruiter approval, job posting and application management.',
     stack: ['Python', 'Django', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
     repo: `${GITHUB}/Automated-Resume-Analysis`,
-    demo: '',
+    demo: 'https://web-production-3ef09154.up.railway.app/',
     visual: 'resume',
     featured: true,
     detail:
